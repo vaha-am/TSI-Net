@@ -5,3 +5,8 @@ This repository contains code implementations for the paper "Construction of Mul
 
 # Short Description
 The project is divided into three parts: 1. A protocol for processing liquid chromatography/mass spectrometry (LC/MS) data, 2. A semi-supervised method for constructing multi-modal networks, and 3. An analysis of the multi-modal TSI-Nets with respect to human complex traits. Code implementations for parts 1 and 2 are available in this repository.
+
+# LC/MS data processing protocol
+The LC/MS data processing protocol consists of three steps: 1. Batch effect correction using a random forest model, 2. principal component analysis (PCA), and 3. covariate adjustment with a stepwise regression model
+
+## Batch effect correction
