@@ -15,3 +15,12 @@ To correct for batch effects, a random forest-based approach was applied to the 
 
 ## PCA
 After batch effect correction, principal components (PCs) were calculated based on the log₂-transformed, semi-processed LC/MS data to obtain the top 10 PCs. These PCs are used in the covariate adjustment step. The PCA code implementation can be found in the [PCA directory](./PCA/).
+
+## Covariate adjustment
+We use a stepwise regression model to adjust the input matrix (in this case, the semi-processed log-transformed LC/MS data) for a predefined set of variables. The stepwise regression model consists of:
+  1. Base variables that are always included in the model, regardless of their relationship with the outcome variable.
+  2. Additional variables that are included only if they meet a significance threshold for the outcome variable.
+
+A separate stepwise regression model is applied to each feature in the input matrix (i.e., each semi-processed LC/MS measurement).
+The same methodology is also applied to the transformed RNA-seq data. For more details, please refer to the paper.
+The stepwise regression code implementation can be found in the
